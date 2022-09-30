@@ -1,214 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="20dp"
     tools:context=".Login">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/creativa_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_name_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="30dp"
+        android:hint="Username"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:startIconDrawable="@drawable/ic_baseline_person_outline_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pass_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_layout"
+        app:startIconDrawable="@drawable/ic_outline_lock_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:singleLine="true" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="20dp"
+        android:background="#1363DF"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/pass_layout" />
 
-        <FrameLayout
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Forgot Password?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="273dp"
-            android:background="@drawable/blue_bg">
-
-            <!--            <androidx.cardview.widget.CardView-->
-            <!--                android:id="@+id/roundCardView"-->
-            <!--                android:layout_width="70dp"-->
-            <!--                android:layout_height="70dp"-->
-            <!--                android:elevation="0dp"-->
-            <!--                android:layout_gravity="center"-->
-            <!--                android:layout_marginBottom="20dp"-->
-            <!--                app:cardCornerRadius="60dp">-->
-
-            <!--                <ImageView-->
-            <!--                    android:layout_width="70dp"-->
-            <!--                    android:layout_height="70dp"-->
-            <!--                    android:src="@drawable/sk_logo_dup" />-->
-
-            <!--            </androidx.cardview.widget.CardView>-->
-
-            <!--            <de.hdodenhof.circleimageview.CircleImageView-->
-            <!--                android:layout_width="100dp"-->
-            <!--                android:layout_height="100dp"-->
-            <!--                android:src="@drawable/sk_logo_dup"-->
-            <!--                android:layout_gravity="center" />-->
-
-        </FrameLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="62dp"
-            android:layout_marginTop="36.7dp"
-            android:layout_marginRight="62dp"
-            android:background="@drawable/blue_border_rounded_cornwe">
-
-            <EditText
-                android:id="@+id/user_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/user_icon"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="username"
-                android:inputType="text"
-                android:maxLines="1"
-                android:paddingStart="17dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:textCursorDrawable="@drawable/cursor_color"
-                android:textSize="12sp" />
+            android:layout_height="45dp"
+            android:layout_marginTop="22dp"
+            android:id="@+id/facebook_layout"
+            android:background="@drawable/blue_border_rounded_cornwe"
+            app:layout_constraintTop_toBottomOf="@id/forgot_password">
 
             <ImageView
-                android:id="@+id/user_icon"
-                android:layout_width="15.7dp"
-                android:layout_height="15.3dp"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="17dp"
-                android:src="@drawable/username" />
+                android:id="@+id/facebook_icon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/facebook"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="62dp"
-            android:layout_marginTop="12.7dp"
-            android:layout_marginRight="62dp"
-            android:background="@drawable/blue_border_rounded_cornwe">
-
-            <EditText
-                android:id="@+id/password"
+            <TextView
+                android:id="@+id/facebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/password_icon"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/poppins_regular"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:paddingStart="17dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:textCursorDrawable="@drawable/cursor_color"
-                android:textSize="12sp" />
+                android:fontFamily="@font/manrope_bold"
+                android:gravity="center"
+                android:layout_marginTop="12dp"
+                android:text="Sign In with Facebook"
+                android:textColor="#243A73"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageView
-                android:id="@+id/password_icon"
-                android:layout_width="14.7dp"
-                android:layout_height="10.3dp"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="17dp"
-                android:src="@drawable/password" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/login"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="62dp"
-            android:layout_marginTop="18.7dp"
-            android:layout_marginEnd="62dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/google_layout"
             android:background="@drawable/blue_fill__rounded_color"
-            android:fontFamily="@font/poppins_medium"
-            android:gravity="center"
-            android:paddingTop="14dp"
-            android:paddingBottom="14dp"
-            android:text="Login"
-            android:textColor="#ffffff"
-            android:textSize="12sp" />
+            app:layout_constraintTop_toBottomOf="@id/facebook_layout">
+
+            <ImageView
+                android:id="@+id/google_plus"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/googleplus1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/google"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_bold"
+                android:gravity="center"
+                android:text="Sign In with Google"
+                android:layout_marginTop="12dp"
+                android:textColor="#FF1E1E"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/google_layout">
 
         <TextView
-            android:id="@+id/forgot_password"
+            android:id="@+id/dont_have_an_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/nunito_semibold"
-            android:text="Forgot Password?"
-            android:textColor="#1566e0"
-            android:textSize="10.5sp" />
+            android:fontFamily="@font/poppins_regular"
+            android:text="Don't have an account?"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ProgressBar
-            android:id="@+id/progress"
+        <TextView
+            android:id="@+id/create_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:indeterminateTint="#1566e0"
-            android:visibility="gone" />
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/manrope_bold"
+            android:text="Create One"
+            android:textColor="#0267C8"
+            app:layout_constraintStart_toEndOf="@id/dont_have_an_account"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="32dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <!--            <ImageView-->
-            <!--                android:layout_width="26.7dp"-->
-            <!--                android:layout_height="26.7dp"-->
-            <!--                android:src="@drawable/fb"/>-->
-
-            <!--            <ImageView-->
-            <!--                android:layout_width="26.7dp"-->
-            <!--                android:layout_height="26.7dp"-->
-            <!--                android:layout_marginStart="20dp"-->
-            <!--                android:src="@drawable/instagram"/>-->
-
-            <!--            <ImageView-->
-            <!--                android:layout_width="26.7dp"-->
-            <!--                android:layout_height="26.7dp"-->
-            <!--                android:layout_marginStart="20dp"-->
-            <!--                android:src="@drawable/twitter"/>-->
-
-            <!--            <ImageView-->
-            <!--                android:layout_width="26.7dp"-->
-            <!--                android:layout_height="26.7dp"-->
-            <!--                android:layout_marginStart="20dp"-->
-            <!--                android:src="@drawable/fb"/>-->
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_regular"
-                android:text="Don't have an account ?" />
-
-            <TextView
-                android:id="@+id/register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:focusable="true"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Register"
-                android:textColor="#1566e0" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

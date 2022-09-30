@@ -32,7 +32,7 @@ class Login : AppCompatActivity(R.layout.activity_login) {
         myViewModel = ViewModelProvider(this, factory1)[MyViewModel::class.java]
         dataStore = LoginDataStore(this)
 
-        binding.register.setOnClickListener {
+        binding.createOne.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)
             startActivity(intent)
         }

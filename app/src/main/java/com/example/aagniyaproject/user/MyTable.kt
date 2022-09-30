@@ -3,7 +3,6 @@ package com.example.aagniyaproject.user
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
 @Entity(tableName = "user_table")
 data class MyTable (
     val user_name:String,

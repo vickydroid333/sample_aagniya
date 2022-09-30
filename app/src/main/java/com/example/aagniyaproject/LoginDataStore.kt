@@ -71,7 +71,6 @@ class LoginDataStore(private val context: Context) {
         }
     }
 
-
     fun getId(): Flow<String> = context.datastore.data.map {
         val dataStoreKey = stringPreferencesKey(ID)
         val companyName = it[dataStoreKey] ?: "0"
@@ -83,5 +82,4 @@ class LoginDataStore(private val context: Context) {
             it.clear()
         }
     }
-
 }

@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.AagniyaProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">#206ADA</item>
         <item name="colorPrimaryVariant">#206ADA</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
